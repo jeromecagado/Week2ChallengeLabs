@@ -48,6 +48,7 @@ namespace Week2ChallengeLabs
             Console.WriteLine($"Roll No: {RollNumber}");
             Console.WriteLine($"Marks in Physics: {Physics}");
             Console.WriteLine($"Marks in Chemistry: {Chemistry}");
+            Console.WriteLine($"Marks in Computer Application: {ComputerApplication}");
             Console.WriteLine($"Total Marks = {totalMarks}");
             Console.WriteLine($"Percentage = {percentage:F2}");
             Console.WriteLine($"Division = {division}");
