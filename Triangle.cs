@@ -6,14 +6,14 @@ namespace Week2ChallengeLabs
     {
         
 
-        public static void DisplayTriangle(int number, int width)
+        public static void DisplayTriangle(string character, int width)
         {
-            for (int i = 0; i < number; i++)
+            int length = width;
+            for (int i = 0; i < length; i++)
             {
                 for (int j = width; j > 0; j--)
                 {
-                    Console.Write(number);
-                    
+                    Console.Write(character);
                 }
                 Console.WriteLine();
                 width--;

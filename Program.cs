@@ -4,41 +4,41 @@
     {
         static void Main(string[] args)
         {
-            // Assignment 1:
-            Console.WriteLine("Hello, welcome to the reading temperature application.\n");
+            //// Assignment 1:
+            //Console.WriteLine("Hello, welcome to the reading temperature application.\n");
 
-            double[] temperatures = [67, 100, 20, 0, 45, 10, 70];
-            Temperature temperature = new Temperature();
+            //double[] temperatures = [67, 100, 20, 0, 45, 10, 70];
+            //Temperature temperature = new Temperature();
 
-            foreach (double temp in temperatures)
-            {
-                temperature.DisplayTemperature(temp);
-            }
-            Console.WriteLine("Press Enter to continue\n");
-            Console.ReadLine();
-            Console.WriteLine();
+            //foreach (double temp in temperatures)
+            //{
+            //    temperature.DisplayTemperature(temp);
+            //}
+            //Console.WriteLine("Press Enter to continue\n");
+            //Console.ReadLine();
+            //Console.WriteLine();
 
 
-            // Assignment 2:
-            Password password = new Password();
-            password.UserId = "jcagado";
-            password.UserPassword = "LiverpoolFan";
-            password.EnterLogin();
+            //// Assignment 2:
+            //Password password = new Password();
+            //password.UserId = "jcagado";
+            //password.UserPassword = "LiverpoolFan";
+            //password.EnterLogin();
 
             // Assignment 3:
             PromptTriangle();
 
-            // Assigment 4:
-            Student student = new Student();
-            student.RollNumber = 7;
-            student.Name = "Jerome";
-            student.Physics = 98;
-            student.Chemistry = 92;
-            student.ComputerApplication = 100;
-            int totalMarks = student.CalculateMarks();
-            double percentage = student.CalculatePercentage(totalMarks);
-            string division = student.GetDivision(percentage);
-            student.DisplayStudent(totalMarks, percentage, division);
+            //// Assigment 4:
+            //Student student = new Student();
+            //student.RollNumber = 7;
+            //student.Name = "Jerome";
+            //student.Physics = 98;
+            //student.Chemistry = 92;
+            //student.ComputerApplication = 100;
+            //int totalMarks = student.CalculateMarks();
+            //double percentage = student.CalculatePercentage(totalMarks);
+            //string division = student.GetDivision(percentage);
+            //student.DisplayStudent(totalMarks, percentage, division);
 
 
         }
@@ -48,12 +48,19 @@
           
             while (true)
             {
-                Console.WriteLine("\nEnter a number: ");
-                if(!int.TryParse(Console.ReadLine(), out int number))
+                Console.WriteLine("\nEnter one character: ");
+                string? character = Console.ReadLine();
+                if (string.IsNullOrEmpty(character) || character.Length > 1)
                 {
-                    Console.WriteLine("Incorrect input. Please enter a postive integer.");
+                    Console.WriteLine("Incorrect input. It must be one character of your choosing. Please try again.");
                     continue;
                 }
+
+                //if(!int.TryParse(Console.ReadLine(), out int number))
+                //{
+                //    Console.WriteLine("Incorrect input. Please enter a postive integer.");
+                //    continue;
+                //}
                 Console.WriteLine("Enter a width:");
                 if(!int.TryParse(Console.ReadLine(), out int width))
                 {
@@ -61,7 +68,7 @@
                     continue;
                 }
 
-                Triangle.DisplayTriangle(number, width);
+                Triangle.DisplayTriangle(character, width);
                 break;
             }
         }
