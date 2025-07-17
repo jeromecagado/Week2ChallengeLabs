@@ -45,22 +45,21 @@
 
         public static void PromptTriangle()
         {
-          
             while (true)
             {
                 Console.WriteLine("\nEnter one character: ");
-                string? character = Console.ReadLine();
-                if (string.IsNullOrEmpty(character) || character.Length > 1)
+                //string? character = Console.ReadLine();
+                //if (string.IsNullOrEmpty(character) || character.Length > 1)
+                //{
+                //    Console.WriteLine("Incorrect input. It must be one character of your choosing. Please try again.");
+                //    continue;
+                //}
+                if (!char.TryParse(Console.ReadLine(), out char character))
                 {
                     Console.WriteLine("Incorrect input. It must be one character of your choosing. Please try again.");
                     continue;
                 }
 
-                //if(!int.TryParse(Console.ReadLine(), out int number))
-                //{
-                //    Console.WriteLine("Incorrect input. Please enter a postive integer.");
-                //    continue;
-                //}
                 Console.WriteLine("Enter a width:");
                 if(!int.TryParse(Console.ReadLine(), out int width))
                 {

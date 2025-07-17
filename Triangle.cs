@@ -6,7 +6,7 @@ namespace Week2ChallengeLabs
     {
         
 
-        public static void DisplayTriangle(string character, int width)
+        public static void DisplayTriangle(char character, int width)
         {
             int length = width;
             for (int i = 0; i < length; i++)
