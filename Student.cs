@@ -12,46 +12,47 @@ namespace Week2ChallengeLabs
         public int Chemistry { get; set; }
         public int ComputerApplication { get; set; }
 
-        public int CalculateMarks()
-        {
-            return Physics + Chemistry + ComputerApplication;
-        }
+        public int TotalMarks => Physics + Chemistry + ComputerApplication;
+        public double Percentage => (double)TotalMarks / 3;
 
-        public double CalculatePercentage(int totalMarks)
+        public string Division => Percentage switch
         {
-            return (double)totalMarks / 3;
-        }
+            >= 70 => "First",
+            >= 50 and < 70 => "Second",
+            >= 40 and < 49 => "Third",
+            _ => "Failed"
+        };
 
-        public string GetDivision(double percentage)
-        {
-            string division = "";
-            switch (percentage)
-            {
-                case >= 60:
-                    division = "First";
-                    break;
-                case >= 50 and < 60:
-                    division = "Second";
-                    break;
-                case >= 40 and < 50:
-                    division = "Third";
-                    break;
-                default:
-                    division = "Failed";
-                    break;
-            }
-            return division;
-        }
+        //public int CalculateMarks()
+        //{
+        //    return Physics + Chemistry + ComputerApplication;
+        //}
 
-        public void DisplayStudent(int totalMarks, double percentage, string division)
+        //public double CalculatePercentage(int totalMarks)
+        //{
+        //    return (double)totalMarks / 3;
+        //}
+
+        //public string GetDivision(double percentage)
+        //{
+        //    return percentage switch
+        //    {
+        //        >= 70 => "First",
+        //        >= 50 and < 70 => "Second",
+        //        >= 40 and < 49 => "Third",
+        //        _ => "Failed"
+        //    };
+        //}
+
+        public void DisplayStudent()
         {
             Console.WriteLine($"Roll No: {RollNumber}");
             Console.WriteLine($"Marks in Physics: {Physics}");
             Console.WriteLine($"Marks in Chemistry: {Chemistry}");
             Console.WriteLine($"Marks in Computer Application: {ComputerApplication}");
-            Console.WriteLine($"Total Marks = {totalMarks}");
-            Console.WriteLine($"Percentage = {percentage:F2}");
-            Console.WriteLine($"Division = {division}");
+            Console.WriteLine($"Total Marks = {TotalMarks}");
+            Console.WriteLine($"Percentage = {Percentage:F2}");
+            Console.WriteLine($"Division = {Division}");
         }
     }
 }
